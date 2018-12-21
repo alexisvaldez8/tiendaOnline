@@ -5,8 +5,26 @@ page-inicio {
 }
 
 .cardInicio{
-    margin-top: 15%;
+    margin-top: 10%;
     width: 100%;
+    align-items: center;
+}
+
+.cardContent{
+    align-items: center;
+    padding: 5%;
+    margin-block-start: -5%;
+    margin-block-end: -5%;
+}
+
+.menu{
+    align-content: center;
+    align-items: center;
+}
+
+.botonMenu{
+    background: black;
+    width: 30%;
 }
 
 
