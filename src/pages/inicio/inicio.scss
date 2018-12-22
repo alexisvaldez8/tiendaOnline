@@ -15,6 +15,8 @@ page-inicio {
     padding: 5%;
     margin-block-start: -5%;
     margin-block-end: -5%;
+    margin-left: -5%;
+    margin-right: -5%;
 }
 
 .menu{
@@ -25,8 +27,34 @@ page-inicio {
 .botonMenu{
     background: black;
     width: 30%;
+    height: 10%;
+    padding: 8px;
+    font-weight: 480;
+    font-size: 15px;
 }
 
+.botonMenu:hover{
+    background: white;
+    color: black;
+}
+
+.items{
+    margin: 0 auto;
+}
+
+.botonItem{
+    color: black;
+    text-transform: none;
+    margin: 0 auto;
+}
+
+ion-card img {
+    margin-block-start: -1%;
+    width: auto;
+    height: 320px;
+    display: block;
+    margin: 20px auto;
+  }
 
 }
 
