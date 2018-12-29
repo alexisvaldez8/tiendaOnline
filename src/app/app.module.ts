@@ -3,6 +3,8 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
+
+import { CarritoPage } from '../pages/carrito/carrito';
 import { ArticuloPage }  from '../pages/articulo/articulo';
 
 import { MyApp } from './app.component';
@@ -14,7 +16,8 @@ import { HttpClientModule } from '@angular/common/http';
   declarations: [
     MyApp,
     HomePage,
-    ArticuloPage
+    ArticuloPage,
+    CarritoPage
   ],
   imports: [
     BrowserModule,
@@ -25,7 +28,8 @@ import { HttpClientModule } from '@angular/common/http';
   entryComponents: [
     MyApp,
     HomePage,
-    ArticuloPage
+    ArticuloPage,
+    CarritoPage
   ],
   providers: [
     StatusBar,
