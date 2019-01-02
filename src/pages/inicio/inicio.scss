@@ -48,13 +48,20 @@ page-inicio {
     margin: 0 auto;
 }
 
-ion-card img {
+.seccion img {
     margin-block-start: -1%;
     width: auto;
     height: 320px;
     display: block;
     margin: 20px auto;
   }
+
+
+  .seccion{
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+   }
 
 }
 
