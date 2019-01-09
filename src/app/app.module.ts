@@ -9,12 +9,14 @@ import { HomePage } from '../pages/home/home';
 import { HttpProvider } from '../providers/http/http';
 import {HttpClientModule} from '@angular/common/http';
 import {InicioPage} from '../pages/inicio/inicio';
+import {UserprofilePage} from '../pages/userprofile/userprofile'
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    InicioPage
+    InicioPage,
+    UserprofilePage
   ],
   imports: [
     BrowserModule,
@@ -25,7 +27,8 @@ import {InicioPage} from '../pages/inicio/inicio';
   entryComponents: [
     MyApp,
     HomePage,
-    InicioPage
+    InicioPage,
+    UserprofilePage
   ],
   providers: [
     StatusBar,
