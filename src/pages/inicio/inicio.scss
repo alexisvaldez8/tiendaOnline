@@ -38,32 +38,27 @@ page-inicio {
     color: black;
 }
 
-.items{
-    margin: 0 auto;
-}
-
 .botonItem{
     color: black;
     text-transform: none;
-    margin: 0 auto;
-    font-size: 105%;
-    font-weight: bold;
+    width: 40%;
+    height: 10%;
+    padding: 10px;
+    font-size: 14px;
+    margin-right: -4%;
+    margin-left: -4%;
 }
 
-.seccion img {
+.imagen {
     margin-block-start: -1%;
     width: auto;
     height: 320px;
     display: block;
-    margin: 20px auto;
+    margin: 10px auto;
   }
 
 
-  .seccion{
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-   }
+  
 
 }
 
