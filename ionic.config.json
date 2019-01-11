@@ -1,5 +1,7 @@
 {
   "name": "tiendaOnline",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "ionic-angular"
 }
