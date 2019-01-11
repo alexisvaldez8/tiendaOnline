@@ -1,0 +1,84 @@
+<!--
+  Generated template for the CarritoPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+</ion-header>
+
+
+<ion-content>
+
+    <ion-card>
+
+        <ion-item>
+            <div class="center-cropped" style="background-image: url(../../assets/img/img_preview.jpg)"></div>
+            <ion-fab right top>
+                <button color="danger" ion-fab mini>
+                  <ion-icon name="close"></ion-icon>
+                </button>
+              </ion-fab>
+            
+          <h2>Playera de Rick and Morty</h2>
+          <p>Talla:  L</p>
+          <p>Precio: 348.90</p>
+           
+          <ion-row>
+              <ion-col class="cantidad" >
+                  <p>Cantidad:</p> 
+                </ion-col>
+  
+              <ion-col >
+                <button ion-button icon-start clear small>
+                    <ion-icon class="icono_color" name="ios-arrow-dropleft-outline"></ion-icon>
+                </button>
+              </ion-col>
+
+              <ion-col class="cantidad_col">
+                  <p>1</p>
+                </ion-col> 
+              <ion-col>
+                <button ion-button icon-start clear small>
+                    <ion-icon class="icono_color" name="ios-arrow-dropright-outline"></ion-icon>
+                </button>
+              </ion-col>
+
+          </ion-row>
+
+          <p class="pTotal" align="center">Total: 348.90</p>
+          
+        </ion-item>
+      </ion-card>
+
+
+      <ion-row>
+          <ion-col>
+              <button ion-button full color="danger">Limpiar</button>
+            </ion-col>
+
+          <ion-col>
+              <button ion-button full>Actualizar</button>
+          </ion-col>
+      </ion-row>
+
+      <ion-list>
+          <ion-item> 
+              Articulos
+            <ion-icon class="icons" name="ios-people" item-end>1</ion-icon>
+          </ion-item>
+
+          <ion-item> 
+              Subtotal
+            <ion-icon class="icons" name="logo-usd" item-end>299</ion-icon>
+          </ion-item>
+
+          <ion-item> 
+              Total
+            <ion-icon class="icons" name="logo-usd" item-end>349.90</ion-icon>
+          </ion-item>
+        </ion-list>
+
+        <button ion-button full>Pagar</button>
+</ion-content>

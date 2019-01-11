@@ -1,0 +1,89 @@
+page-articulo {
+
+    .buscador{
+        margin-top: 5%;
+    }
+
+    .img_art{
+        width: 95%;
+        height: 100%;
+        padding: 0%;
+    } 
+
+    .precio{
+        //margin-top: 10%;
+        color: #FFFFFF;
+        margin-left: 0%;
+        padding: 0dp;
+    
+    }
+
+    .iva{
+        color: #FFFFFF;
+        padding: 0%;
+    }
+
+
+    .footer{
+        height: auto;
+       padding: 0%;
+       background: #860000;
+    }
+
+    .icono_color{
+        color: #FFFFFF;
+    }
+ 
+    .izq_col{
+        //margin-top: 10%;
+        margin-left: 0%;
+    }
+
+    .der_col{
+       // margin-top: 10%;
+        margin-right: 0%;
+    }
+
+    .cantidad_col{
+        margin-left: 0%;
+        //margin-top: 10%;
+        color: #FFFFFF;
+    }
+
+    .cantidad{
+        margin-top: 10%; 
+        
+    }
+
+    .btn_carrito{
+        color: #860000;
+        background: #FFFFFF;
+    }
+
+    .h4_nombre{
+        color: #860000;
+    }
+
+   .slide_img{
+       width: 95%;
+       height: 45%;
+
+   }
+
+   .sliding{
+    background-repeat: no-repeat;
+    background-size: cover;
+   }
+
+   .p_desc{
+
+    color: #860000;
+    margin-left:5%; 
+   }
+
+   .div_des{
+       padding-left: 5%;
+       padding-right: 5%;
+   }
+
+}

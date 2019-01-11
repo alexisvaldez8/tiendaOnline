@@ -10,7 +10,11 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class HttpProvider {
 
+<<<<<<< HEAD
   path: String ="blabla"
+=======
+  path : string = "wwww.dfsdsf"
+>>>>>>> troca_articulo
 
   constructor(public http: HttpClient) {
     console.log('Hello HttpProvider Provider');

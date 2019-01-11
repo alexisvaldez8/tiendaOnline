@@ -4,6 +4,10 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 
+import { CarritoPage } from '../pages/carrito/carrito';
+import { ArticuloPage }  from '../pages/articulo/articulo';
+import { DireccionPage } from '../pages/direccion/direccion';
+
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { HttpProvider } from '../providers/http/http';
@@ -16,7 +20,10 @@ import {UserprofilePage} from '../pages/userprofile/userprofile'
     MyApp,
     HomePage,
     InicioPage,
-    UserprofilePage
+    UserprofilePage,
+    ArticuloPage,
+    CarritoPage,
+    DireccionPage
   ],
   imports: [
     BrowserModule,
@@ -28,7 +35,10 @@ import {UserprofilePage} from '../pages/userprofile/userprofile'
     MyApp,
     HomePage,
     InicioPage,
-    UserprofilePage
+    UserprofilePage,
+    ArticuloPage,
+    CarritoPage,
+    DireccionPage
   ],
   providers: [
     StatusBar,
