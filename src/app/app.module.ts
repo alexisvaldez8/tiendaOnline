@@ -7,6 +7,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { CarritoPage } from '../pages/carrito/carrito';
 import { ArticuloPage }  from '../pages/articulo/articulo';
 import { DireccionPage } from '../pages/direccion/direccion';
+import { TabsPage } from '../pages/tabs/tabs';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
@@ -23,7 +24,8 @@ import {UserprofilePage} from '../pages/userprofile/userprofile'
     UserprofilePage,
     ArticuloPage,
     CarritoPage,
-    DireccionPage
+    DireccionPage,
+    TabsPage
   ],
   imports: [
     BrowserModule,
@@ -38,7 +40,8 @@ import {UserprofilePage} from '../pages/userprofile/userprofile'
     UserprofilePage,
     ArticuloPage,
     CarritoPage,
-    DireccionPage
+    DireccionPage,
+    TabsPage
   ],
   providers: [
     StatusBar,
