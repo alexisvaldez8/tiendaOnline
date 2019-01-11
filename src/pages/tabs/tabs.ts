@@ -30,7 +30,6 @@ export class TabsPage {
   ionViewDidLoad() {
     let openTab = this.navParams.get('openTab');
     if(openTab){
- 
      this.tabsRef.select(openTab);
  
     }
