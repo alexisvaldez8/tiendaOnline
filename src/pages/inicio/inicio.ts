@@ -24,7 +24,7 @@ variable:boolean=true;
     { image: "../../assets/imgs/mujer.png" },
     { image: "../../assets/imgs/niño.png" }],
 
-    this.playerasInicio = [{ image: "../../assets/imgs/pstarwars.png" },
+    this.playerasInicio = [{ image: "../../assets/imgs/pstarwarshombre.png" },
     { image: "../../assets/imgs/pstarwarsmujer.png" }];
 
   

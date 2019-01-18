@@ -43,14 +43,23 @@
       <ion-row  class="rowArticulo"> 
         <ion-col class="colArticulo" *ngFor="let playera of playerasInicio" >
             <ion-card class="cardArticulo">
-                <ion-card-content>
+                <ion-card-content class="cardContent">
                     <img class="imagenArticulo" img src="{{playera.image}}"/>
                   <p class="precio">$269.00</p>
                 </ion-card-content>
               </ion-card>
           </ion-col>
-
-  </ion-row>
+      </ion-row>
+      <ion-row  class="rowArticulo"> 
+        <ion-col class="colArticulo" *ngFor="let playera of playerasInicio" >
+            <ion-card class="cardArticulo">
+                <ion-card-content class="cardContent">
+                    <img class="imagenArticulo" img src="{{playera.image}}"/>
+                  <p class="precio">$269.00</p>
+                </ion-card-content>
+              </ion-card>
+          </ion-col>
+      </ion-row>
 <!--
   <ion-card class="cardInicio">
     <ion-card-content class="cardContent">
