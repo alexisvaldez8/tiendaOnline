@@ -18,7 +18,7 @@
 
 <ion-content >
 
-  <ion-row> 
+  <ion-row class="row"> 
       <ion-col class="botonesMenu">
           <button ion-button class="botonMenu">HOMBRE</button>
         </ion-col>
@@ -28,9 +28,42 @@
           <ion-col class="botonesMenu">
               <button ion-button class="botonMenu">NIÑO</button>
             </ion-col>
-
     </ion-row>
 
+    <ion-slides autoplay="5000" loop="true" speed="3000">
+        <ion-slide *ngFor="let slide of slideData">
+          <img src="{{slide.image}}" />
+        </ion-slide>
+      </ion-slides>
+
+      <ion-row  class="rowArticulo"> 
+        <ion-col class="colArticulo" *ngFor="let playera of playerasInicio" >
+            <ion-card class="cardArticulo">
+                <ion-card-header>
+                    <img class="imagenArticulo" img src="{{playera.image}}"/>
+                  </ion-card-header>
+                <ion-card-content>
+                  
+
+                </ion-card-content>
+              </ion-card>
+          </ion-col>
+
+          <!--
+          <ion-col class="colArticulo">
+              <ion-card class="cardArticulo">
+                  <ion-card-header>
+                      <img class="imagenArticulo" src="assets/imgs/pstarwarsmujer.png"/>
+                    </ion-card-header>
+                  <ion-card-content>
+                    
+                  </ion-card-content>
+                </ion-card>
+            </ion-col>           
+     
+    -->
+
+  </ion-row>
 <!--
   <ion-card class="cardInicio">
     <ion-card-content class="cardContent">

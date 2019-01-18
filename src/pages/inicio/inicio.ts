@@ -15,7 +15,21 @@ import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angu
 })
 export class InicioPage {
 
+slideData; 
+playerasInicio;
+
   constructor(public navCtrl: NavController, public navParams: NavParams, public modCtrl: ModalController) {
+    this.slideData = [{ image: "../../assets/imgs/hombre.png" },
+    { image: "../../assets/imgs/mujer.png" },
+    { image: "../../assets/imgs/niño.png" }],
+
+    this.playerasInicio = [{ image: "../../assets/imgs/pstarwars.png" },
+    { image: "../../assets/imgs/pstarwarsmujer.png" }];
+
+  
+
+  
+  
   }
 
   ionViewDidLoad() {
@@ -27,5 +41,7 @@ export class InicioPage {
     this.modCtrl.create('LoginPage').present();   
 
   }
+
+  
 
 }

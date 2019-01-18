@@ -38,6 +38,11 @@ page-inicio {
     margin-top: 2%;
     width: 33%;
     height: 15%;
+
+}
+.row{
+    margin-bottom: 0%;
+    padding: 0%;
 }
 
 .botonMenu{
@@ -68,14 +73,28 @@ page-inicio {
 .imagen {
     margin-block-start: -1%;
     width: auto;
-    height: 320px;
+    height: 300px;
     display: block;
     margin: 10px auto;
   }
 
-  
+  .imagenArticulo {
+    width: auto;
+    height: 180px;
+    display: block;
+  }
 
+  .cardArticulo{
+      margin: 0 auto;
+  }
 
+  .colArticulo{
+    margin: -3%;
+  }
+
+  .rowArticulo{
+      margin-top: 5%;
+  }
   
 
 }

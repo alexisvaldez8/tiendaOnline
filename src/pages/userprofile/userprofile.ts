@@ -14,8 +14,11 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
   templateUrl: 'userprofile.html',
 })
 export class UserprofilePage {
+  opcPerfil;
+
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.opcPerfil=["Mis Pedidos","Actualizar Datos","Cerrar Sesion"];
   }
 
   ionViewDidLoad() {
