@@ -5,14 +5,43 @@
   Ionic pages and navigation.
 -->
 
-
-
-<ion-content class="main-view">
-    <div class="overlay" (click)="cerrarModal()"></div>
-    <div class="modal_content">
+<ion-content >
+   
+  <ion-fab top right>
+    <button color="primario" ion-fab (click)="cerrarModal()" mini>
+      <ion-icon name="close"></ion-icon>
+    </button>
+  </ion-fab>
 
       <ion-img class="imgLogo" src="../../assets/img/ic_logo.png"></ion-img>
 
-    </div>
+      <ion-item class="usuarioItem">  
+        <ion-label color="primario" stacked>Usuario</ion-label>
+        <ion-input type="text" placeholder="JoseManuelGdlO"></ion-input>
+      </ion-item>  
+   
+      <ion-item class="contraItem">
+        <ion-label color="primario" stacked>Contraseña</ion-label> 
+        <ion-input type="password" [(ngModel)]="contra" placeholder="**************"></ion-input>  
+      </ion-item>   
+
+      <div class="divBtn">
+           <button ion-button round color="primario" class="btnLogin" outline>Iniciar Sesion</button>
+      </div>
+
+      <ion-grid>
+        <ion-row >
+          <ion-col class="paddingCol" align="right">
+            <h5 class="hText">Registrame/</h5>
+          </ion-col>   
+          <ion-col class="paddingCol">
+            <h5 class="hText">Olvide mi Contraseña</h5>
+          </ion-col>
+        </ion-row>
+      
+      </ion-grid>
+
+      
+
     
 </ion-content>

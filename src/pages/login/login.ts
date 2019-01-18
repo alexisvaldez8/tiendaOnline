@@ -26,5 +26,5 @@ export class LoginPage {
     this.view.dismiss();
   }
 
-
+    
 }
