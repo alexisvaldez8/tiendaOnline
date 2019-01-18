@@ -17,6 +17,7 @@ export class InicioPage {
 
 slideData; 
 playerasInicio;
+variable:boolean=true;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, public modCtrl: ModalController) {
     this.slideData = [{ image: "../../assets/imgs/hombre.png" },
@@ -42,6 +43,17 @@ playerasInicio;
 
   }
 
-  
+  mostrar(){
+    if(this.variable){
+      this.variable=false;
+    }else{
+      this.variable=true;
+    }
+
+    
+  }
+
+
+
 
 }

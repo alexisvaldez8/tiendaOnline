@@ -8,8 +8,7 @@
   <ion-buttons end>
       <button class="btnPerfil"  (click)="abrirLogin()" ion-button >
           <ion-icon class="icono_color" name="md-contact"></ion-icon>
-      </button>
-    
+      </button>  
   </ion-buttons>
 </ion-navbar>
   
@@ -31,37 +30,25 @@
     </ion-row>
 
     <ion-slides autoplay="5000" loop="true" speed="3000">
-        <ion-slide *ngFor="let slide of slideData">
-          <img src="{{slide.image}}" />
+        <ion-slide class="contenedor" *ngFor="let slide of slideData" >
+          <img src="{{slide.image}}" (click)="mostrar()" />
+          <div [hidden]="variable" class="centrado" (click)="mostrar()"> 
+            <p class="textoCentrado">Lo mas vendido</p>
+            <p class="textoImagen">Novedades</p>
+            <p class="textoImagen">Rebajas</p>
+          </div>
         </ion-slide>
       </ion-slides>
 
       <ion-row  class="rowArticulo"> 
         <ion-col class="colArticulo" *ngFor="let playera of playerasInicio" >
             <ion-card class="cardArticulo">
-                <ion-card-header>
-                    <img class="imagenArticulo" img src="{{playera.image}}"/>
-                  </ion-card-header>
                 <ion-card-content>
-                  
-
+                    <img class="imagenArticulo" img src="{{playera.image}}"/>
+                  <p class="precio">$269.00</p>
                 </ion-card-content>
               </ion-card>
           </ion-col>
-
-          <!--
-          <ion-col class="colArticulo">
-              <ion-card class="cardArticulo">
-                  <ion-card-header>
-                      <img class="imagenArticulo" src="assets/imgs/pstarwarsmujer.png"/>
-                    </ion-card-header>
-                  <ion-card-content>
-                    
-                  </ion-card-content>
-                </ion-card>
-            </ion-col>           
-     
-    -->
 
   </ion-row>
 <!--
@@ -74,8 +61,8 @@
           </ion-navbar>
     </ion-card-content>
   </ion-card>
--->
-  <!-- inicia card seccion hombre -->
+
+   
   <ion-card>
     <ion-card-content>
       <img class="imagen" src="assets/imgs/hombre.png" />
@@ -84,30 +71,9 @@
       <button ion-button clear class="botonItem">Chamarras</button>
     </ion-card-content>
   </ion-card>
-  <!-- termina card seccion hombre -->
+ -->
 
-  <!-- inicia card seccion mujer -->
-  <ion-card>
-    <ion-card-content>
-      <img class="imagen" src="assets/imgs/mujer.png" />
-      <button ion-button clear class="botonItem">Playeras</button>
-      <button ion-button clear class="botonItem">Sudaderas</button>
-      <button ion-button clear class="botonItem">Chamarras</button>
-    </ion-card-content>
-  </ion-card>
-  <!-- termina card seccion mujer -->
-
- <!-- inicia card seccion niño -->
- <ion-card>
-  <ion-card-content>
-    <img class="imagen" src="assets/imgs/niño.png" />
-    <button ion-button clear class="botonItem">Playeras</button>
-    <button ion-button clear class="botonItem">Sudaderas</button>
-    <button ion-button clear class="botonItem">Chamarras</button>
-  </ion-card-content>
-</ion-card>
-<!-- termina card seccion niño -->
-
+  
 
   </ion-content>
 
