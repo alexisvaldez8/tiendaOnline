@@ -5,13 +5,17 @@
   Ionic pages and navigation.
 -->
 
-<ion-content >
+<ion-content class="main-view">
+  <div class="overlay" (click)="cerrarModal()"></div>
+   <div class="modal_content">
    
-  <ion-fab top right>
-    <button color="primario" ion-fab (click)="cerrarModal()" mini>
-      <ion-icon name="close"></ion-icon>
-    </button>
-  </ion-fab>
+  <!--
+       <ion-fab top right>
+        <button color="primario" ion-fab (click)="cerrarModal()" mini>
+          <ion-icon name="close"></ion-icon>
+        </button>
+       </ion-fab>
+  -->
 
       <ion-img class="imgLogo" src="../../assets/img/ic_logo.png"></ion-img>
 
@@ -43,5 +47,5 @@
 
       
 
-    
+    </div>
 </ion-content>
