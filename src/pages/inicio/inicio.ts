@@ -26,9 +26,6 @@ variable:boolean=true;
 
     this.playerasInicio = [{ image: "../../assets/imgs/pstarwarshombre.png" },
     { image: "../../assets/imgs/pstarwarsmujer.png" }];
-
-  
-
   
   
   }
@@ -49,11 +46,19 @@ variable:boolean=true;
     }else{
       this.variable=true;
     }
-
-    
   }
 
+  menPage(){ 
+    this.navCtrl.push("MenPage");
+  }
 
+  womanPage(){ 
+    this.navCtrl.push("WomanPage");
+  }
+
+  kidPage(){ 
+    this.navCtrl.push("KidPage");
+  }
 
 
 }
