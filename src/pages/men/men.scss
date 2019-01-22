@@ -1,14 +1,63 @@
 page-men {
 
+
 .titulo{
-    margin: 0 auto;
+    margin-top: 15px;
+    margin-bottom: 15px;
     width: 100%;
     text-align: center;
     text-transform: none;
-    height: 30px;
+    height: 20px;
+    font-weight: bold;
 }
 
+.subtitulo{
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 5%;
+}
 
+.row{
+    margin-bottom: 8%;
+    padding: 0%;
+}
+
+.imagenArticulo {
+    width: 100%;
+    height: 145px;
+    position: relative;
+    //transform: scale(1.5)
+  }
+
+
+  .cardArticulo{
+      margin: 0 auto;
+      width: 100%;
+  }
+
+  .cardContent{
+      width: 100%;
+      margin: 0;
+      margin-bottom: 10px;
+  }
+  .colArticulo{
+    margin: 0;
+  }
+
+  .rowArticulo{
+      margin-top: 5%;
+  }
+  
+  .precio{
+      text-align: center;
+      font-weight: bold;
+      color: black;
+      margin-top: 10px;
+      //margin: 0;
+      width: 100%;
+      //background-color: rgb(224, 224, 224)
+  }
 
 
 }

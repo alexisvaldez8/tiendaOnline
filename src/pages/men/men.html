@@ -17,6 +17,34 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content>
+
+  <p class="subtitulo">Playeras</p>
+
+  <ion-row  class="rowArticulo"> 
+      <ion-col class="colArticulo" *ngFor="let playera of playerasHombre" >
+          <ion-card class="cardArticulo">
+              <ion-card-content class="cardContent">
+                  <img class="imagenArticulo" img src="{{playera.image}}"/>
+                <p class="precio">$269.00</p>
+              </ion-card-content>
+            </ion-card>
+        </ion-col>
+    </ion-row>
+
+    <p class="subtitulo">Sudaderas</p>
+
+    <ion-row  class="rowArticulo"> 
+        <ion-col class="colArticulo" *ngFor="let playera of playerasHombre" >
+            <ion-card class="cardArticulo">
+                <ion-card-content class="cardContent">
+                    <img class="imagenArticulo" img src="{{playera.image}}"/>
+                  <p class="precio">$269.00</p>
+                </ion-card-content>
+              </ion-card>
+          </ion-col>
+      </ion-row>
+
+
 
 </ion-content>

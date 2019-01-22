@@ -12,10 +12,15 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 @Component({
   selector: 'page-men',
   templateUrl: 'men.html',
+  
 })
 export class MenPage {
-
+  playerasHombre;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+
+    this.playerasHombre = [{ image: "../../assets/imgs/pstarwarshombre.png" },
+    { image: "../../assets/imgs/pstarwarsmujer.png" }];
+
   }
 
   ionViewDidLoad() {
