@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ViewController, ModalController } from 'ionic-angular';
 
 /**
  * Generated class for the LoginPage page.
@@ -15,7 +15,7 @@ import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angul
 })
 export class LoginPage {
 
-  constructor(public navCtrl: NavController,public view: ViewController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public modalCtrl: ModalController, public view: ViewController, public navParams: NavParams) {
   }
 
   ionViewDidLoad() {
@@ -26,5 +26,11 @@ export class LoginPage {
     this.view.dismiss();
   }
 
+  registrar(){
+
+    this.modalCtrl.create('RegistroPage').present();
+
+
+  }
     
 }
