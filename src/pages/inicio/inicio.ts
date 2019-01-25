@@ -42,9 +42,11 @@ completo:any[];
     this.http.recientes().then(
     (data)=>{
       console.log(data)
-      this.completo=data["completo"];
-      //this.productos=this.completo.productos;
-      console.log("prueba: " +JSON.stringify(this.completo));
+      //this.completo=data;
+      console.log("prueba: "+this.completo);
+
+      //this.completo=this.completo.completo;
+      
     },
     (error)=>{
       console.log("error"+JSON.stringify(error))
