@@ -15,4 +15,21 @@ export class HttpProvider {
     console.log('Hello HttpProvider Provider');
   }
 
+  recientes(){
+    var url = 'http://localhost:8080/TiendaOnline/lista_productos_nuevos.php';
+    console.log(url);
+    
+   return new Promise((resolve, reject) => {
+    this.http.get(url)
+       .subscribe(data => {
+         resolve(data);
+        }, (err) =>{
+          reject(err);
+        });
+   });
+
+
+ }
+
+
 }

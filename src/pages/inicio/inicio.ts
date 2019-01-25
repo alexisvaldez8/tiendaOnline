@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
+import {HttpProvider} from '../../providers/http/http'
 
 /**
  * Generated class for the InicioPage page.
@@ -19,7 +20,14 @@ slideData;
 playerasInicio;
 variable:boolean=true;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, public modCtrl: ModalController) {
+productos:any;
+rutaImagen:any[];
+completo:any[];
+  constructor(public navCtrl: NavController, public navParams: NavParams, public modCtrl: ModalController, public http:HttpProvider)
+  {
+
+  this.traerNovedades();
+
     this.slideData = [{ image: "../../assets/imgs/hombre.png" },
     { image: "../../assets/imgs/mujer.png" },
     { image: "../../assets/imgs/niño.png" }],
@@ -28,6 +36,19 @@ variable:boolean=true;
     { image: "../../assets/imgs/pstarwarsmujer.png" }];
   
   
+  }
+
+  traerNovedades(){
+    this.http.recientes().then(
+    (data)=>{
+      console.log(data)
+      this.completo=data["completo"];
+      //this.productos=this.completo.productos;
+      console.log("prueba: " +JSON.stringify(this.completo));
+    },
+    (error)=>{
+      console.log("error"+JSON.stringify(error))
+    });
   }
 
   ionViewDidLoad() {
