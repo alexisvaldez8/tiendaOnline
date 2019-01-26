@@ -15,4 +15,24 @@ export class HttpProvider {
     console.log('Hello HttpProvider Provider');
   }
 
+
+/////////////////Troca/////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+  login(usuario:string, contra:string){
+    var url = 'http://localhost/TiendaOnline/UsuariosLogin.php?usuario='+usuario+'&contra='+contra;
+    console.log(url);
+    
+   return new Promise((resolve, reject) => {
+    this.http.get(url)   
+       .subscribe(data => {
+
+         resolve(data);
+        }, (err) =>{
+          reject(err);
+        });
+   });
+
+
+ }
+
 }

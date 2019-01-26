@@ -21,7 +21,7 @@
 
       <ion-item class="usuarioItem">  
         <ion-label color="primario" stacked>Usuario</ion-label>
-        <ion-input type="text" placeholder="JoseManuelGdlO"></ion-input>
+        <ion-input type="text" [(ngModel)]="usuario" placeholder="JoseManuelGdlO"></ion-input>
       </ion-item>  
    
       <ion-item class="contraItem">
@@ -30,7 +30,7 @@
       </ion-item>   
 
       <div class="divBtn">
-           <button ion-button round color="primario" class="btnLogin" outline>Iniciar Sesion</button>
+           <button ion-button round color="primario" class="btnLogin" (click)="login()" outline>Iniciar Sesion</button>
       </div>
 
       <ion-grid>
