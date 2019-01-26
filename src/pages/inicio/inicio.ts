@@ -22,7 +22,7 @@ variable:boolean=true;
 
 productos:any;
 rutaImagen:any[];
-completo:any[];
+completo:any;
   constructor(public navCtrl: NavController, public navParams: NavParams, public modCtrl: ModalController, public http:HttpProvider)
   {
 
@@ -41,12 +41,10 @@ completo:any[];
   traerNovedades(){
     this.http.recientes().then(
     (data)=>{
-      console.log(data)
-      //this.completo=data;
-      console.log("prueba: "+this.completo);
-
-      //this.completo=this.completo.completo;
-      
+      //console.log(data)
+      this.completo=data;
+      //this.completo=this.completo.productos;
+      console.log(this.completo);
     },
     (error)=>{
       console.log("error"+JSON.stringify(error))
