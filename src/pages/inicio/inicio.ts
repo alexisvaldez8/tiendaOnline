@@ -22,7 +22,8 @@ variable:boolean=true;
 
 productos:any;
 rutaImagen:any[];
-completo:any;
+completo:any[]=[];
+ruta:any[0]="http://localhost:8080/";
   constructor(public navCtrl: NavController, public navParams: NavParams, public modCtrl: ModalController, public http:HttpProvider)
   {
 
@@ -32,7 +33,7 @@ completo:any;
     { image: "../../assets/imgs/mujer.png" },
     { image: "../../assets/imgs/niño.png" }],
 
-    this.playerasInicio = [{ image: "../../assets/imgs/pstarwarshombre.png" },
+    this.playerasInicio = [{ image: this.completo  },
     { image: "../../assets/imgs/pstarwarsmujer.png" }];
   
   
@@ -42,9 +43,14 @@ completo:any;
     this.http.recientes().then(
     (data)=>{
       //console.log(data)
-      this.completo=data;
-      //this.completo=this.completo.productos;
+      this.completo[0]=data;
       console.log(this.completo);
+      this.completo=this.completo[0].completo.productos[0].imagenes[0].ruta_imagen;
+      console.log("aiiiuudaa");
+      this.completo=(this.ruta+this.completo)
+      //this.completo.toString();
+      console.log(this.completo);
+
     },
     (error)=>{
       console.log("error"+JSON.stringify(error))
