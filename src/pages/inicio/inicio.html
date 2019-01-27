@@ -37,7 +37,7 @@
 
       <ion-row  class="rowArticulo"> 
         <ion-col class="colArticulo" *ngFor="let playera of playerasInicio" >
-            <ion-card class="cardArticulo">
+            <ion-card class="cardArticulo" (click)="abrirArticulo()" >
                 <ion-card-content class="cardContent">
                     <img class="imagenArticulo" img src="{{playera.image}}"/>
                   <p class="precio">$269.00</p>

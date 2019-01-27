@@ -40,6 +40,10 @@ variable:boolean=true;
 
   }
 
+  abrirArticulo(){
+    this.modCtrl.create('ArticuloPage', {Data:"1"}).present();   
+  }
+
   mostrar(){
     if(this.variable){
       this.variable=false;

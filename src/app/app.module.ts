@@ -5,7 +5,6 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 
 import { CarritoPage } from '../pages/carrito/carrito';
-import { ArticuloPage }  from '../pages/articulo/articulo';
 import { DireccionPage } from '../pages/direccion/direccion';
 import { TabsPage } from '../pages/tabs/tabs';
 
@@ -24,7 +23,6 @@ import { IonicStorageModule } from '@ionic/storage';
     HomePage,
     InicioPage,
     UserprofilePage,
-    ArticuloPage,
     CarritoPage,
     DireccionPage,
     TabsPage
@@ -41,11 +39,10 @@ import { IonicStorageModule } from '@ionic/storage';
     HomePage,
     InicioPage,
     UserprofilePage,
-    ArticuloPage,
     CarritoPage,
     DireccionPage,
     TabsPage
-  ],
+  ],  
   providers: [
     StatusBar,
     SplashScreen,

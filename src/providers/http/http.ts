@@ -31,8 +31,22 @@ export class HttpProvider {
           reject(err);
         });
    });
-
-
  }
+
+
+ articulo(id:string){
+  var url = 'http://localhost/TiendaOnline/troquita/MostrarArticulo.php?id='+id;
+  console.log(url);
+  
+ return new Promise((resolve, reject) => {
+  this.http.get(url)   
+     .subscribe(data => {
+   
+       resolve(data);
+      }, (err) =>{
+        reject(err);
+      });
+ });
+}
 
 }

@@ -11,6 +11,12 @@
 
     <ion-searchbar class="buscador" placeholder="Buscar Articulo"></ion-searchbar>
 
+    <ion-fab right top>
+      <button color="dark" (click)="cerrarModal()" ion-fab mini>
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-fab>
+
     
     <ion-slides class="slide_img">
          <ion-slide class="sliding" style="background-image: url(../../assets/img/img_preview.jpg)"></ion-slide>
@@ -21,25 +27,22 @@
       </ion-slides>
     
  
-    <h4 class="h4_nombre" align="center">Playera de Rick and Morty</h4>
+    <h4 class="h4_nombre" align="center">{{nombre}}</h4>
 
     
     <ion-item>
         <ion-label>Talla</ion-label>
         <ion-select [(ngModel)]="talla">
-          <ion-option value="xs">ExtraChica</ion-option>
-          <ion-option value="s">Chica</ion-option>
-          <ion-option value="m">Mediana</ion-option>
-          <ion-option value="g">Grande</ion-option>
-          <ion-option value="xg">ExtraGrande</ion-option>
+          <ion-option value="xs">ExtraChica {{extra_chica}}</ion-option>
+          <ion-option value="s">Chica {{chica}} </ion-option>
+          <ion-option value="m">Mediana {{mediana}} </ion-option>
+          <ion-option value="g">Grande {{grande}}</ion-option>
+          <ion-option value="xg">ExtraGrande {{extra_grande}}</ion-option>
         </ion-select>
       </ion-item>
       
       <h5 class="p_desc">Descripcion</h5>
-      <div class="div_des">Playera de Caballero y Dama para Sublimación 
-   
-          Las playeras para sublimacion Black Kiss son ideales para sublimacion ya que estan compuestas en 100% poliester lo que 
-          garantiza unos colores nitidos y vibrantes, y al mismo tiempo brindando a la prenda frescura y versatilidad
+      <div class="div_des"> {{descripcion}}
       </div>
     
      
@@ -51,10 +54,10 @@
         <ion-row>
           <ion-col class="precio" align="left">
             <ion-row>
-              $299
+              ${{precio}}
             </ion-row>
             <ion-row class="iva">
-                IVA $346.84 
+                Envio $0 
               </ion-row>
             </ion-col>
           <ion-col class="izq_col" align="left">
@@ -63,16 +66,18 @@
                 </ion-row>
                 <ion-row class="cantidad">
                     <ion-col>
-                        <ion-icon class="icono_color" name="ios-arrow-dropleft-outline"></ion-icon>
+                       
+                        <ion-icon (click)="menos()" class="icono_color" name="ios-arrow-dropleft-outline"></ion-icon>
+                        
                       </ion-col>
           
                         <ion-col class="cantidad_col">
-                            1
+                            {{cantidad}}
                           </ion-col> 
           
                           <ion-col class="der_col" align="left">
-                       
-                              <ion-icon class="icono_color" name="ios-arrow-dropright-outline"></ion-icon>
+                              <ion-icon  (click)="mas()" class="icono_color" name="ios-arrow-dropright-outline"></ion-icon>
+                              
                             </ion-col>
                   </ion-row>
             
