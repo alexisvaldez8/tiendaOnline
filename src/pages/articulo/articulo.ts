@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, ViewController, ToastController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ViewController, ToastController, ModalController } from 'ionic-angular';
+
+import { Storage } from '@ionic/storage';
 import { HttpProvider } from '../../providers/http/http';
+import { LoadingController } from 'ionic-angular';
 
 
 /**
@@ -18,6 +21,7 @@ import { HttpProvider } from '../../providers/http/http';
 export class ArticuloPage {
 
   articulo:any;
+  imagenes:any;
   nombre:string;
   stock:string;
   precio:string;
@@ -25,25 +29,170 @@ export class ArticuloPage {
   genero:string;
   color:string;
   fecha:string;
-  extra_chica:string;
-  chica:string;
-  mediana:string;
-  grande:string;
-  extra_grande:string;
-  cantidad:any=1;
+  extra_chica:any;
+  chica:any;
+  mediana:any;
+  grande:any;
+  extra_grande:any;
+
+
+
+  cantidad:any=1;  
+
+  id_articulo:string;
+  talla:any=0;
+
+  ////login
+  usuario:string;
+  contra:string;
+
+  id_usuario:any;
+  
 				
 
   constructor(public navCtrl: NavController,
      public navParams: NavParams,
      public view:ViewController,
      public http:HttpProvider,
-     public toastCtrl:ToastController) {
+     public toastCtrl:ToastController,
+     public modalCtl:ModalController,
+     public storage:Storage,
+     public loadingCtrl:LoadingController) {
 
-    console.log(navParams.get('Data'));
-
+    
+    this.id_articulo=navParams.get('Data');
     this.traerArticulo(navParams.get('Data'));
+    this.traerImagenes(navParams.get('Data'));
 
   }
+
+  comprar(){
+
+          if(this.talla == 0){
+
+            let toast = this.toastCtrl.create({
+              message: 'antes debes seleccionar la talla',
+              duration: 3000,
+              position: 'top'
+            });
+          
+            toast.present();
+
+   
+          }else if(this.talla == 1){
+            console.log("extra chica  "+this.extra_chica);
+
+            if(this.cantidad > this.extra_chica){
+              this.toastCantidad();
+            }else {
+              this.siguienteModal(this.id_articulo,this.cantidad , this.talla);
+            }
+
+          }else if(this.talla == 2){
+            console.log("chica  "+this.chica);
+
+            if(this.cantidad > this.extra_chica){
+              this.toastCantidad();              
+            }else {
+              this.siguienteModal(this.id_articulo,this.cantidad , this.talla);
+            }
+
+          }else if(this.talla == 3){
+            console.log("mediana  "+this.mediana);
+
+            if(this.cantidad > this.extra_chica){
+              this.toastCantidad();              
+            }else {
+              this.siguienteModal(this.id_articulo,this.cantidad , this.talla);
+            }
+
+          }else if(this.talla == 4){
+            console.log("grande   "+this.grande);
+
+            if(this.cantidad > this.extra_chica){
+              this.toastCantidad();              
+            }else {
+              this.siguienteModal(this.id_articulo,this.cantidad , this.talla);
+            }
+
+          }else{    
+            console.log("extra grande  "+this.extra_grande);
+
+            if(this.cantidad > this.extra_chica){
+              this.toastCantidad();
+            }else {
+              this.siguienteModal(this.id_articulo,this.cantidad , this.talla);
+            }   
+
+          }
+  
+  }
+
+  
+
+  siguienteModal(id:string, cantidad:string, talla:string){
+
+
+    this.storage.get('USU').then((usu) =>{
+      console.log("Usuario"+usu);
+      this.usuario = usu;
+    });  
+
+    this.storage.get('PASS').then((pass) =>{
+      console.log("Contrasena"+pass);
+      this.contra = pass;
+      this.login(id,cantidad,talla);
+    });   
+
+
+     
+
+    
+
+  }
+
+  registroCarrito(id:string, cantidad:string, talla:string){
+    console.log("Enviando al PHP  "+id+"  Cantidad  "+cantidad+"  Talla  "+talla+"  Precio  "+this.precio); 
+    
+
+    this.http.agregarCarrito(this.id_usuario,id,this.precio,cantidad,talla).then(
+      (data) => {    
+        console.log(data)
+  
+        var result = data["estado"];   
+
+       if(result != 0){
+        console.log("REgistro Exitoso");
+        this.cerrarModal();
+       }else{
+         console.log("no registro");
+       }
+  
+        
+
+      },
+      (error) =>{
+        console.log("Error"+JSON.stringify(error));
+       
+      }
+    );
+    
+      
+    
+  }
+
+  toastCantidad(){
+    let toast = this.toastCtrl.create({
+      message: 'No contamos con la cantidad suficiente de esa talla',
+      duration: 3000,
+      position: 'top'
+    });
+  
+    toast.present();
+  }
+
+
+ 
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ArticuloPage');
@@ -87,6 +236,10 @@ export class ArticuloPage {
 
         var result = data["articulo"];
 
+       
+
+       
+
         for (var i = 0; i < result.length; i++) {
            console.log(result[i].nombre);   
            this.nombre=result[i].nombre;
@@ -103,8 +256,9 @@ export class ArticuloPage {
      
          // this.id = result[i].id_usuario;
           
-          }
+          }   
 
+        
 
         console.log("Resultado   "+this.articulo);  
 
@@ -115,6 +269,74 @@ export class ArticuloPage {
        
       }
     );
+  }
+
+  traerImagenes(id:string){
+
+    this.http.articuloImg(id).then(
+      (data) => {    
+        console.log(data)  
+
+        this.imagenes = data["imagenes"];
+
+      },
+      (error) =>{
+        console.log("Error"+JSON.stringify(error));
+       
+      }
+    );
+
+  }
+
+  login(id:string, cantidad:string, talla:string){
+
+    this.http.login(this.usuario,this.contra).then(
+      (data) => { 
+        console.log(data)  
+
+
+
+
+        var result = data["usuario"];
+
+        for (var i = 0; i < result.length; i++) {
+           console.log(result[i].id_usuario);
+          this.id_usuario = result[i].id_usuario;
+          
+          }
+
+          if(this.id_usuario != 0){
+            this.registroCarrito(id,cantidad,talla); 
+        }else{
+          
+          let modalRegistra = this.modalCtl.create('LoginPage');
+          modalRegistra.onDidDismiss(data => {
+          console.log(data);
+    
+          if(data != 0){
+    
+            console.log("Log Exitoso desde modal");
+    
+            this.id_usuario = data;
+            this.registroCarrito(id,cantidad,talla);
+           
+          }else{
+           console.log("no Logeo desde modal");   
+           
+          }   
+         });
+    
+         modalRegistra.present();
+        }  
+           
+
+      },
+      (error) =>{
+        console.log("Error"+JSON.stringify(error));
+        
+      }
+    );
+
   }
 
 }

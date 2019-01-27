@@ -41,11 +41,11 @@ export class TabsPage {
     public modlCtrl:ModalController) {
 
     
-                    
+    /*              
       this.storage.set('USU',null);
     this.storage.set('PASS',null);  
     this.storage.set('NUM', 0);  
-    
+    */
 
       this.storage.get('USU').then((usu) =>{
         console.log("Usuario"+usu);

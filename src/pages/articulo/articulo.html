@@ -19,11 +19,9 @@
 
     
     <ion-slides class="slide_img">
-         <ion-slide class="sliding" style="background-image: url(../../assets/img/img_preview.jpg)"></ion-slide>
-         <ion-slide class="sliding" style="background-image: url(../../assets/img/img_preview.jpg)"></ion-slide>
-         <ion-slide class="sliding" style="background-image: url(../../assets/img/img_preview.jpg)"></ion-slide>
-         <ion-slide class="sliding" style="background-image: url(../../assets/img/img_preview.jpg)"></ion-slide>
-         <ion-slide class="sliding" style="background-image: url(../../assets/img/img_preview.jpg)"></ion-slide>
+         <ion-slide class="sliding" *ngFor="let imagen of imagenes">   
+          <img src="{{imagen.ruta_imagen}}" />      
+        </ion-slide>
       </ion-slides>
     
  
@@ -33,11 +31,11 @@
     <ion-item>
         <ion-label>Talla</ion-label>
         <ion-select [(ngModel)]="talla">
-          <ion-option value="xs">ExtraChica {{extra_chica}}</ion-option>
-          <ion-option value="s">Chica {{chica}} </ion-option>
-          <ion-option value="m">Mediana {{mediana}} </ion-option>
-          <ion-option value="g">Grande {{grande}}</ion-option>
-          <ion-option value="xg">ExtraGrande {{extra_grande}}</ion-option>
+          <ion-option value="1">Extra Chica {{extra_chica}}</ion-option>
+          <ion-option value="2">Chica {{chica}} </ion-option>
+          <ion-option value="3">Mediana {{mediana}} </ion-option>
+          <ion-option value="4">Grande {{grande}}</ion-option>
+          <ion-option value="5">Extra Grande {{extra_grande}}</ion-option>
         </ion-select>
       </ion-item>
       
@@ -85,7 +83,7 @@
           
             
               <ion-col align="left">
-                  <button ion-button class="btn_carrito" color="light">Carrito</button>
+                  <button ion-button class="btn_carrito" (click)="comprar()" color="light">Carrito</button>
                 </ion-col>
         </ion-row> 
       </ion-grid>

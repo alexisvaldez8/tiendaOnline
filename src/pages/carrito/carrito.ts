@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
 
 /**
  * Generated class for the CarritoPage page.
@@ -15,11 +15,38 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 })
 export class CarritoPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  cantidad:any=1;
+
+  constructor(public navCtrl: NavController, public navParams: NavParams, public toastCtl:ToastController) {
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad CarritoPage');
   }
+
+  menos(){  
+    
+    if(this.cantidad == 1){
+
+      let toast = this.toastCtl.create({
+        message: 'No puedes solicitar menos de 1',
+        duration: 3000,
+        position: 'bottom'
+      });
+    
+      toast.present();
+
+    }else{
+      this.cantidad= this.cantidad-1;
+    }
+
+  }
+
+  mas(){
+
+    this.cantidad = this.cantidad+1;
+
+  }
+
 
 }

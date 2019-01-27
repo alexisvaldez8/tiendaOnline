@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
+
+import { Storage } from '@ionic/storage';
+
 
 /**
  * Generated class for the UserprofilePage page.
@@ -17,12 +20,46 @@ export class UserprofilePage {
   opcPerfil;
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public storage:Storage, public alertCtrl:AlertController) {
     this.opcPerfil=["Mis Pedidos","Actualizar Datos","Cerrar Sesion"];
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad UserprofilePage');
+  }
+
+  cerrarSesion(){
+
+     
+    this.storage.set('USU',null);
+    this.storage.set('PASS',null);
+    this.storage.set('NUM', 0);
+
+   
+    window.location.reload();
+
+  }
+
+  showConfirm() {
+    const confirm = this.alertCtrl.create({
+      title: 'Estas seguro?',
+      message: 'Quieres Cerrar Sesion?',
+      buttons: [
+        {
+          text: 'No',
+          handler: () => {
+            console.log('Disagree clicked');
+          }
+        },
+        {
+          text: 'Si',
+          handler: () => {
+            this.cerrarSesion();
+          }
+        }
+      ]
+    });
+    confirm.present();
   }
 
 }

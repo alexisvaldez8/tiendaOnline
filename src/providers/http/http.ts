@@ -41,7 +41,39 @@ export class HttpProvider {
  return new Promise((resolve, reject) => {
   this.http.get(url)   
      .subscribe(data => {
-   
+     
+       resolve(data);
+      }, (err) =>{
+        reject(err);
+      });
+ });
+}   
+
+
+articuloImg(id:string){
+  var url = 'http://localhost/TiendaOnline/troquita/MostrarImgArticulo.php?id='+id;   
+  console.log(url);
+  
+ return new Promise((resolve, reject) => {
+  this.http.get(url)   
+     .subscribe(data => {
+     
+       resolve(data);
+      }, (err) =>{
+        reject(err);
+      });
+ });
+}
+
+
+agregarCarrito(id_usuario:string, id_articulo:string, precio:string, cantidad:string, talla:string){
+  var url = 'http://localhost/TiendaOnline/troquita/AgregarCarrito.php?id_usuario='+id_usuario+'&cantidad='+cantidad+'&precio='+precio+'&id_articulo='+id_articulo+'&talla='+talla;   
+  console.log(url);
+  
+ return new Promise((resolve, reject) => {
+  this.http.get(url)   
+     .subscribe(data => {
+         
        resolve(data);
       }, (err) =>{
         reject(err);

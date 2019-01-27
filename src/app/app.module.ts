@@ -36,13 +36,13 @@ import { IonicStorageModule } from '@ionic/storage';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage,
+    HomePage,  
     InicioPage,
     UserprofilePage,
     CarritoPage,
     DireccionPage,
     TabsPage
-  ],  
+  ],         
   providers: [
     StatusBar,
     SplashScreen,

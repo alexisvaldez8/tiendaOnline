@@ -29,16 +29,16 @@
                 </ion-col>
   
               <ion-col >
-                <button ion-button icon-start clear small>
+                <button (click)="menos()" ion-button icon-start clear small>
                     <ion-icon class="icono_color" name="ios-arrow-dropleft-outline"></ion-icon>
                 </button>
               </ion-col>
 
               <ion-col class="cantidad_col">
-                  <p>1</p>
+                  <p>{{cantidad}}</p>  
                 </ion-col> 
               <ion-col>
-                <button ion-button icon-start clear small>
+                <button (click)="mas()" ion-button icon-start clear small>
                     <ion-icon class="icono_color" name="ios-arrow-dropright-outline"></ion-icon>
                 </button>
               </ion-col>
