@@ -6,9 +6,7 @@
 -->
 <ion-tabs  color="dark" #myTabs>
   <ion-tab [root]="inicio" tabTitle="Home" tabIcon="md-home"></ion-tab>
-  <ion-tab [root]="carrito" tabTitle="Carrito" tabIcon="md-cart" [show]="perfilBol"></ion-tab>
-  <ion-tab tabTitle="Perfil" tabIcon="md-contact" (ionSelect)="modalLogin()" [show]="perfilLogBol" ></ion-tab>    
-  <ion-tab [root]="usuarioPage" tabTitle="Perfil" tabIcon="md-contact" [show]="perfilBol"></ion-tab>
+  <ion-tab [root]="carrito" tabTitle="Carrito" tabIcon="md-cart"></ion-tab>
+  <ion-tab [root]="usuario" tabTitle="Perfil" tabIcon="md-contact"></ion-tab>
   
 </ion-tabs>
-   

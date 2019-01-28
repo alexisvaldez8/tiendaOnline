@@ -5,6 +5,11 @@
 <ion-header class="header">
   <ion-navbar>
   <ion-searchbar class="buscador" placeholder="Buscar Articulo"> </ion-searchbar>
+  <ion-buttons end>
+      <button class="btnPerfil"  (click)="abrirLogin()" ion-button >
+          <ion-icon class="icono_color" name="md-contact"></ion-icon>
+      </button>  
+  </ion-buttons>
 </ion-navbar>
   
 </ion-header>
@@ -25,8 +30,8 @@
     </ion-row>
 
     <ion-slides autoplay="5000" loop="true" speed="3000">
-        <ion-slide class="contenedor" *ngFor="let slide of slideData" >
-          <img src="{{slide.image}}" (click)="mostrar()" />
+        <ion-slide class="contenedor" *ngFor="let slide of completoInicio" >
+          <img src="{{slide.ruta}}" (click)="mostrar()" />
           <div [hidden]="variable" class="centrado" (click)="mostrar()"> 
             <p class="textoCentrado">Lo mas vendido</p>
             <p class="textoImagen">Novedades</p>
@@ -36,15 +41,19 @@
       </ion-slides>
 
       <ion-row  class="rowArticulo"> 
-        <ion-col class="colArticulo" *ngFor="let playera of playerasInicio" >
-            <ion-card class="cardArticulo" (click)="abrirArticulo()" >
+        <ion-col class="colArticulo" *ngFor="let playera of novedades" >
+            <ion-card class="cardArticulo">
                 <ion-card-content class="cardContent">
-                    <img class="imagenArticulo" img src="{{playera.image}}"/>
+                    <img class="imagenArticulo" img src="{{playera.ruta_imagen}}"/>
                   <p class="precio">$269.00</p>
                 </ion-card-content>
               </ion-card>
           </ion-col>
       </ion-row>
+
+
+<!--
+
       <ion-row  class="rowArticulo"> 
         <ion-col class="colArticulo" *ngFor="let playera of playerasInicio" >
             <ion-card class="cardArticulo">
@@ -55,7 +64,7 @@
               </ion-card>
           </ion-col>
       </ion-row>
-<!--
+
   <ion-card class="cardInicio">
     <ion-card-content class="cardContent">
         <ion-navbar class="menu">

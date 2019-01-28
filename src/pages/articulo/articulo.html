@@ -11,36 +11,35 @@
 
     <ion-searchbar class="buscador" placeholder="Buscar Articulo"></ion-searchbar>
 
-    <ion-fab right top>
-      <button color="dark" (click)="cerrarModal()" ion-fab mini>
-        <ion-icon name="close"></ion-icon>
-      </button>
-    </ion-fab>
-
     
     <ion-slides class="slide_img">
-         <ion-slide class="sliding" *ngFor="let imagen of imagenes">   
-          <img src="{{imagen.ruta_imagen}}" />      
-        </ion-slide>
+         <ion-slide class="sliding" style="background-image: url(../../assets/img/img_preview.jpg)"></ion-slide>
+         <ion-slide class="sliding" style="background-image: url(../../assets/img/img_preview.jpg)"></ion-slide>
+         <ion-slide class="sliding" style="background-image: url(../../assets/img/img_preview.jpg)"></ion-slide>
+         <ion-slide class="sliding" style="background-image: url(../../assets/img/img_preview.jpg)"></ion-slide>
+         <ion-slide class="sliding" style="background-image: url(../../assets/img/img_preview.jpg)"></ion-slide>
       </ion-slides>
     
  
-    <h4 class="h4_nombre" align="center">{{nombre}}</h4>
+    <h4 class="h4_nombre" align="center">Playera de Rick and Morty</h4>
 
     
     <ion-item>
         <ion-label>Talla</ion-label>
         <ion-select [(ngModel)]="talla">
-          <ion-option value="1">Extra Chica {{extra_chica}}</ion-option>
-          <ion-option value="2">Chica {{chica}} </ion-option>
-          <ion-option value="3">Mediana {{mediana}} </ion-option>
-          <ion-option value="4">Grande {{grande}}</ion-option>
-          <ion-option value="5">Extra Grande {{extra_grande}}</ion-option>
+          <ion-option value="xs">ExtraChica</ion-option>
+          <ion-option value="s">Chica</ion-option>
+          <ion-option value="m">Mediana</ion-option>
+          <ion-option value="g">Grande</ion-option>
+          <ion-option value="xg">ExtraGrande</ion-option>
         </ion-select>
       </ion-item>
       
       <h5 class="p_desc">Descripcion</h5>
-      <div class="div_des"> {{descripcion}}
+      <div class="div_des">Playera de Caballero y Dama para Sublimación 
+   
+          Las playeras para sublimacion Black Kiss son ideales para sublimacion ya que estan compuestas en 100% poliester lo que 
+          garantiza unos colores nitidos y vibrantes, y al mismo tiempo brindando a la prenda frescura y versatilidad
       </div>
     
      
@@ -52,10 +51,10 @@
         <ion-row>
           <ion-col class="precio" align="left">
             <ion-row>
-              ${{precio}}
+              $299
             </ion-row>
             <ion-row class="iva">
-                Envio $0 
+                IVA $346.84 
               </ion-row>
             </ion-col>
           <ion-col class="izq_col" align="left">
@@ -64,18 +63,16 @@
                 </ion-row>
                 <ion-row class="cantidad">
                     <ion-col>
-                       
-                        <ion-icon (click)="menos()" class="icono_color" name="ios-arrow-dropleft-outline"></ion-icon>
-                        
+                        <ion-icon class="icono_color" name="ios-arrow-dropleft-outline"></ion-icon>
                       </ion-col>
           
                         <ion-col class="cantidad_col">
-                            {{cantidad}}
+                            1
                           </ion-col> 
           
                           <ion-col class="der_col" align="left">
-                              <ion-icon  (click)="mas()" class="icono_color" name="ios-arrow-dropright-outline"></ion-icon>
-                              
+                       
+                              <ion-icon class="icono_color" name="ios-arrow-dropright-outline"></ion-icon>
                             </ion-col>
                   </ion-row>
             
@@ -83,7 +80,7 @@
           
             
               <ion-col align="left">
-                  <button ion-button class="btn_carrito" (click)="comprar()" color="light">Carrito</button>
+                  <button ion-button class="btn_carrito" color="light">Carrito</button>
                 </ion-col>
         </ion-row> 
       </ion-grid>
