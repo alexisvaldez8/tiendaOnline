@@ -41,6 +41,7 @@ export class RegistroPage {
 
     
   if(this.nombreCompl){
+    console.log("que tranza banda")
     console.log("Pasamos nombre Completo");
     
     if(this.usuario){
