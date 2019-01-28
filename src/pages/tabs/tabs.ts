@@ -135,6 +135,8 @@ export class TabsPage {
       }
     );
 
+
+    
   }
 
 }
