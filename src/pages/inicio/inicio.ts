@@ -22,40 +22,58 @@ variable:boolean=true;
 
 productos:any;
 rutaImagen:any[];
-completo:any[]=[];
-ruta:any[0]="http://localhost:8080/";
+completoInicio:any;
+completoNovedades:any;
+rutaNovedades:any;
+completo:any;
+ruta:any;
+novedades:any;
+ruta2:any;
+
   constructor(public navCtrl: NavController, public navParams: NavParams, public modCtrl: ModalController, public http:HttpProvider)
   {
 
   this.traerNovedades();
+  this.traerNovedadesInicio();
+
 
     this.slideData = [{ image: "../../assets/imgs/hombre.png" },
     { image: "../../assets/imgs/mujer.png" },
     { image: "../../assets/imgs/niño.png" }],
 
-    this.playerasInicio = [{ image: this.completo  },
+    this.playerasInicio = [{ image: "../../assets/imgs/pstarwarsmujer.png"  },
     { image: "../../assets/imgs/pstarwarsmujer.png" }];
   
   
   }
 
   traerNovedades(){
-    this.http.recientes().then(
+    this.http.novedades().then(
     (data)=>{
-      //console.log(data)
-      this.completo[0]=data;
-      console.log(this.completo);
-      this.completo=this.completo[0].completo.productos[0].imagenes[0].ruta_imagen;
+      this.completoNovedades=data["completo"];
+      this.rutaNovedades=this.completoNovedades.productos[0];
+      this.novedades=this.rutaNovedades.imagenes;
       console.log("aiiiuudaa");
-      this.completo=(this.ruta+this.completo)
-      //this.completo.toString();
-      console.log(this.completo);
-
+      console.log(this.novedades);
     },
     (error)=>{
       console.log("error"+JSON.stringify(error))
     });
   }
+
+traerNovedadesInicio(){
+  this.http.inicio().then(
+    (data)=>{
+      this.completoInicio=data["inicio"];
+      console.log("ayuda");
+      console.log(this.completoInicio);
+    },
+    (error)=>{
+      console.log("error"+JSON.stringify(error))
+    });
+
+}
+
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad InicioPage');

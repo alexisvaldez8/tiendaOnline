@@ -30,8 +30,8 @@
     </ion-row>
 
     <ion-slides autoplay="5000" loop="true" speed="3000">
-        <ion-slide class="contenedor" *ngFor="let slide of slideData" >
-          <img src="{{slide.image}}" (click)="mostrar()" />
+        <ion-slide class="contenedor" *ngFor="let slide of completoInicio" >
+          <img src="{{slide.ruta}}" (click)="mostrar()" />
           <div [hidden]="variable" class="centrado" (click)="mostrar()"> 
             <p class="textoCentrado">Lo mas vendido</p>
             <p class="textoImagen">Novedades</p>
@@ -41,10 +41,10 @@
       </ion-slides>
 
       <ion-row  class="rowArticulo"> 
-        <ion-col class="colArticulo" *ngFor="let playera of playerasInicio" >
+        <ion-col class="colArticulo" *ngFor="let playera of novedades" >
             <ion-card class="cardArticulo">
                 <ion-card-content class="cardContent">
-                    <img class="imagenArticulo" img src="{{completo}}"/>
+                    <img class="imagenArticulo" img src="{{playera.ruta_imagen}}"/>
                   <p class="precio">$269.00</p>
                 </ion-card-content>
               </ion-card>
