@@ -30,38 +30,38 @@
 
         <ion-item class="item-nombrePrimero">        
             <ion-label stacked> <!--<ion-icon name="logo-playstation"></ion-icon>--> Nombre Completo</ion-label>
-            <ion-input class="inputNuevo" clearInput placeholder="Edgar Mercado Valdez" type="text"></ion-input>
+            <ion-input class="inputNuevo" [(ngModel)]="nombreCompl" clearInput placeholder="Edgar Mercado Valdez" type="text"></ion-input>
         </ion-item>
 
         <ion-item class="item-nombre">        
           <ion-label stacked> <!--<ion-icon name="logo-playstation"></ion-icon>--> Usuario</ion-label>
-          <ion-input class="inputNuevo" clearInput placeholder="EdgarAMV" type="text"></ion-input>
+          <ion-input class="inputNuevo" [(ngModel)]="usuario" clearInput placeholder="EdgarAMV" type="text"></ion-input>
         </ion-item>
 
         <ion-item class="item-nombre">        
           <ion-label stacked> <!--<ion-icon name="logo-playstation"></ion-icon>--> Contraseña</ion-label>
-          <ion-input class="inputNuevo" clearInput placeholder="***********" type="password"></ion-input>
+          <ion-input class="inputNuevo" [(ngModel)]="contra" clearInput placeholder="***********" type="password"></ion-input>
         </ion-item>
 
         <ion-item class="item-nombre">        
           <ion-label stacked> <!--<ion-icon name="logo-playstation"></ion-icon>--> Repite la Contraseña</ion-label>
-          <ion-input class="inputNuevo" clearInput placeholder="***********" type="password"></ion-input>
+          <ion-input class="inputNuevo" clearInput [(ngModel)]="contraRep" placeholder="***********" type="password"></ion-input>
         </ion-item>  
 
         
         <ion-item class="item-nombre">        
           <ion-label stacked> <!--<ion-icon name="logo-playstation"></ion-icon>--> Correo Electronico</ion-label>
-          <ion-input class="inputNuevo" clearInput placeholder="EdgarAMV@hotmail.com" type="email"></ion-input>
+          <ion-input class="inputNuevo" clearInput [(ngModel)]="correo" placeholder="EdgarAMV@hotmail.com" type="email"></ion-input>
         </ion-item>
 
 
         
         <ion-item class="item-nombre">        
           <ion-label stacked> <!--<ion-icon name="logo-playstation"></ion-icon>--> Repite el Correo</ion-label>
-          <ion-input class="inputNuevo" clearInput placeholder="EdgarAMV@hotmail.com" type="email"></ion-input>
+          <ion-input class="inputNuevo" clearInput [(ngModel)]="correoRep" placeholder="EdgarAMV@hotmail.com" type="email"></ion-input>
         </ion-item>
 
-        <button color="primario" class="btnCont" (click)="envio()" ion-button full>Continuar</button>
-
+        <button color="primario" class="btnCont" (click)="pasoDos()" ion-button full>Continuar</button>
+    
 
 </ion-content>
