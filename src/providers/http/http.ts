@@ -15,6 +15,77 @@ export class HttpProvider {
     console.log('Hello HttpProvider Provider');
   }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
   novedades(){
     var url = 'http://localhost:8080/TiendaOnline/lista_productos_nuevos.php';
     console.log(url);
@@ -27,10 +98,7 @@ export class HttpProvider {
           reject(err);
         });
    });
-
-
  }
-
  inicio(){
   var url = 'http://localhost:8080/TiendaOnline/inicio.php';
   console.log(url);
@@ -43,8 +111,6 @@ export class HttpProvider {
           reject(err);
         });
    });
-
-
  }
 
 
