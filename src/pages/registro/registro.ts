@@ -19,7 +19,7 @@ export class RegistroPage {
   constructor(public navCtrl: NavController, public modalCtl: ModalController, public view:ViewController, public navParams: NavParams) {
   }
 
-  cerrarModal(){
+  cerrarModal(){    
     this.view.dismiss();
   }
 
