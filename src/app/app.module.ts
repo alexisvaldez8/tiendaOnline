@@ -15,6 +15,7 @@ import { HttpProvider } from '../providers/http/http';
 import {HttpClientModule} from '@angular/common/http';
 import {InicioPage} from '../pages/inicio/inicio';
 import {UserprofilePage} from '../pages/userprofile/userprofile'
+import {IonicStorageModule} from '@ionic/storage'
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import {UserprofilePage} from '../pages/userprofile/userprofile'
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
+    IonicStorageModule.forRoot(),
     HttpClientModule
   ],
   bootstrap: [IonicApp],
