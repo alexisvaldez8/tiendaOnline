@@ -80,5 +80,5 @@ agregarCarrito(id_usuario:string, id_articulo:string, precio:string, cantidad:st
       });
  });
 }
-
+/////////////////////Aleshis//////////////////////////////////////////////////////////7
 }
